@@ -1,7 +1,7 @@
 # Daaksh-AI
 Presenting Daaksh Raj Dhariwal, the apex of personal genius, powered by cutting-edge AI. Clone this repository locally to get started, then insert your Hugging Face API key in the javascript file. If you want to host it locally, you can use http-server or live-server.
 
-![daaksh](https://user-images.githubusercontent.com/65894771/224698443-fa5749ec-6eec-4a6f-acc7-1a617047c1f1.PNG)
+![daaksh](https://user-images.githubusercontent.com/65894771/224699622-c27e51e0-a8e2-4096-8082-679a020e43ab.PNG)
 
 **Getting started** <br />
 The first step is to clone the repository to your local machine. Open a terminal or command prompt and type the following command:
