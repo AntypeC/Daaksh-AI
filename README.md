@@ -4,7 +4,8 @@ Presenting Daaksh Raj Dhariwal, the apex of personal genius, powered by cutting-
 **Getting started** <br />
 The first step is to clone the repository to your local machine. Open a terminal or command prompt and type the following command:
 
-git clone https://github.com/AntypeC/Daaksh-AI.git
+```git clone https://github.com/AntypeC/Daaksh-AI.git```
+
 This will create a new folder called "Daaksh-AI" in your current directory.
 
 Next, open the "js/script.js" file in a text editor. You will need to insert your Hugging Face API key in the file. Locate the following line of code:
