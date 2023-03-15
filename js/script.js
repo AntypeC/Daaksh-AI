@@ -45,6 +45,12 @@ async function query(data) {
 		);
 	  	result = await response.json();
 		result = result.generated_text;
+		nameList = ["Sarah", "Joseph"]
+		for (let i = 0; i < nameList.length; i++) {
+			if (result.includes(nameList[i])) {
+				result = result.replace(nameList[i], "Daaksh")
+			}
+		}
 	} else {
 		url = "https://api.betterapi.net/youdotcom/chat?message=" + JSON.parse(JSON.stringify(data)).inputs.replace(" ", "%20") + "&key=" + "GMLUGVL5ODC5JFU5T8YOC4L5S6TG5T08YXA"
 		console.log(url)
@@ -55,18 +61,14 @@ async function query(data) {
 			} else {
 				const json = await response.json();
 				result = json.message;
+				if (result.includes("Due to high demand, I'm experiencing issues briefly.")) {
+					result = result.replace("😔 ", "").replace("use the All tab", "switch to the Casual mode").replace("an answer", "a response")
+				} else if (result.includes("YouBot")) {
+					result = result.replace("YouBot", "Daaksh")
+				}
 			}
 		} catch (error) {
 			console.error('Error occurred: ' + error.message);
-		}
-	}
-	if (result.includes("Due to high demand, I'm experiencing issues briefly.")) {
-		result = result.replace("😔 ", "").replace("use the All tab", "switch to the Casual mode").replace("an answer", "a response")
-	}
-	nameList = ["Sarah", "Joseph", "YouBot"]
-	for (let i = 0; i < nameList.length; i++) {
-		if (result.includes(nameList[i])) {
-			result = result.replace(nameList[i], "Daaksh")
 		}
 	}
 	return result;
@@ -129,7 +131,7 @@ function main(){
 	document.querySelector(".output-container").scrollTop = textarea.scrollHeight;
 	query({"inputs": input}).then((response) => {
 		document.querySelector(".output-container").append("\nDaaksh: ")
-		t = (response.length/15)*1000
+		t = (response.length/16)*1000
 		animate(t, 'speak.gif')
 		typeWriter(".output-container", response)
 		tts(response)
