@@ -1,11 +1,11 @@
-API_KEY = "";
+API_KEY = "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";
 
 const seriousBtn = document.getElementById('serious-btn');
 const casualBtn = document.getElementById('casual-btn');
 let isCasual = true;
 
 var i = 0;
-var speed = 30;
+var speed = 20;
 
 function selectCasual() {
 	isCasual = true
@@ -89,25 +89,17 @@ document.querySelector(".output-container").append("Daaksh: ")
 num = Math.floor(Math.random()*6)
 r = conversation_starter[num]
 
-function animate(t, filename) {
-	const introDiv = document.querySelector('.title');
-	const gifElement = document.createElement('img');
-	const imageElement = document.createElement('img');
-	if (introDiv.querySelector('img')) {
+const portrait = document.querySelector('.gradient-border');
+
+function replaceimg(filename) {
+	const elem = document.createElement('img');
+	elem.classList.add('border-radius')
+	elem.setAttribute('src', './resources/'+filename);
+	if (portrait.querySelector('img')) {
 		img = document.querySelector('img')
-		introDiv.removeChild(img)
+		portrait.removeChild(img)
 	}
-	imageElement.setAttribute('src', './resources/image.jpeg');
-	imageElement.classList.add("gradient-border");
-	gifElement.classList.add("gradient-border");
-	gifElement.setAttribute('src', './resources/'+filename);
-	setTimeout(
-		function() {
-			introDiv.removeChild(gifElement);
-			introDiv.appendChild(imageElement);
-		}, t
-	)
-	introDiv.appendChild(gifElement)
+	portrait.prepend(elem)
 }
 
 t = 5000
@@ -118,7 +110,16 @@ if (num+1 == 4){
 }
 
 file = 'intro'+(num+1)+'.gif'
-animate(t, file)
+
+console.log("p1")
+replaceimg(file)
+
+setTimeout(
+	function() {
+		console.log("p2")
+		replaceimg("image.jpeg")
+	}, t
+)
 
 typeWriter(".output-container", r)
 tts(r)
@@ -131,8 +132,9 @@ function main(){
 	document.querySelector(".output-container").scrollTop = textarea.scrollHeight;
 	query({"inputs": input}).then((response) => {
 		document.querySelector(".output-container").append("\nDaaksh: ")
-		t = (response.length/20)*1000
-		animate(t, 'speak.gif')
+		t = (response.length/30)*1000
+		console.log("p1")
+		replaceimg("speak.gif")
 		typeWriter(".output-container", response)
 		tts(response)
 	});
@@ -149,7 +151,6 @@ button.addEventListener("click", function(){
 })
 
 function typeWriter(elem, txt) {
-	// console.log(i)
 	if (i < txt.length) {
 		textarea = document.querySelector(elem)
 		textarea.scrollTop = textarea.scrollHeight;
@@ -160,6 +161,10 @@ function typeWriter(elem, txt) {
 		}, speed);
 	} else {
 		i = 0;
+		if (!conversation_starter.includes(txt)) {
+			console.log("p2")
+			replaceimg("image.jpeg")
+		}
 	}
 }
 

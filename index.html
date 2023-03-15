@@ -15,19 +15,23 @@
             padding: 0;
             zoom: 75%;
         }
+
         .casual-background {
             background-image: url('./resources/background1.JPG');
             transition: background-image 1s ease-in-out;
         }
+
         .serious-background {
             background-image: url('./resources/background2.JPG');
             transition: background-image 1s ease-in-out;
         }
+
         @media (pointer:coarse) {
             body {
                 zoom: 50%;
             }
         }
+
         .gradient {
             background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
             position: absolute;
@@ -37,57 +41,56 @@
             height: 100vh;
             z-index: -1;
         }
+
         .gradient-border {
-            --r:10px;     /* radius   */
-            --g:black 0%,transparent; /* gradient */
-            
-            --rg:transparent 50%,var(--g);
-            border-radius:calc(2*var(--r));
-            padding:calc(var(--r));
-            background:
-                /*corners*/
-                radial-gradient(farthest-side at bottom right,var(--rg)) top    left /calc(2*var(--r)) calc(2*var(--r)),
-                radial-gradient(farthest-side at top    right,var(--rg)) bottom left /calc(2*var(--r)) calc(2*var(--r)),
-                radial-gradient(farthest-side at bottom left ,var(--rg)) top    right/calc(2*var(--r)) calc(2*var(--r)),
-                radial-gradient(farthest-side at top    left ,var(--rg)) bottom right/calc(2*var(--r)) calc(2*var(--r)),
-                /* borders*/
-                linear-gradient(to top   ,var(--g)) top   /calc(100% - 4*var(--r)) var(--r),
-                linear-gradient(to bottom,var(--g)) bottom/calc(100% - 4*var(--r)) var(--r),
-                linear-gradient(to right ,var(--g)) right /var(--r) calc(100% - 4*var(--r)),
-                linear-gradient(to left  ,var(--g)) left  /var(--r) calc(100% - 4*var(--r));
-            background-repeat:no-repeat;
-            
-            width:250px;
-            box-sizing:border-box;
-            display:inline-block;
-            vertical-align:top;
+            width: 250px;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d0d0d0;
         }
+
+        .border-radius {
+            border-radius: 10px;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
+
         .title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
+
         .title h1 {
             font-size: 48px;
             font-weight: bold;
             color: white;
             margin: 0;
         }
+
         .title p {
             font-size: 24px;
             font-weight: bold;
-            color: #d0d0d0 ;
+            color: #d0d0d0;
             margin: 0px 0px 30px 0px;
         }
+
         .input-container {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
         }
+
         .input-container textarea {
             flex: 1;
             padding: 10px;
@@ -122,10 +125,6 @@
             height: 400px;
             overflow-y: auto;
             white-space:pre-wrap;
-        }
-        .conversational-style {
-            text-align: center;
-            margin-bottom: 5px;
         }
         .conversation-btn {
             background-color: #666;
@@ -162,8 +161,9 @@
         <div class="title">
             <h1>Daaksh, the Cosmic <span style="color:rgb(0, 255, 0);">Space Duck</span></h1>
             <p>Experience the brilliance of <em>Daaksh Raj Dhariwal</em>, your AI-powered personal genius</p>
-        </div>    
-        <div class="conversational-style">
+        </div>
+        <div class="gradient-border">
+            <p>Conversational Style</p>
             <button id="serious-btn" class="conversation-btn">Serious</button>
             <button id="casual-btn" class="conversation-btn">Casual</button>
         </div>
