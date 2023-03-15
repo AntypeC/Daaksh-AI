@@ -1,4 +1,4 @@
-API_KEY = "";
+API_KEY = "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";
 
 const seriousBtn = document.getElementById('serious-btn');
 const casualBtn = document.getElementById('casual-btn');
@@ -69,9 +69,11 @@ async function query(data) {
 			}
 		} catch (error) {
 			console.error('Error occurred: ' + error.message);
+			result = "Oh no, something went wrong on my end and I couldn't complete the task you requested."
 		}
 	}
 	return result;
+	console.log(result)
 }
 
 function tts(data) {
@@ -111,12 +113,10 @@ if (num+1 == 4){
 
 file = 'intro'+(num+1)+'.gif'
 
-console.log("p1")
 replaceimg(file)
 
 setTimeout(
 	function() {
-		console.log("p2")
 		replaceimg("image.jpeg")
 	}, t
 )
@@ -131,8 +131,8 @@ function main(){
 	document.querySelector(".output-container").append("\nUser: "+input);
 	document.querySelector(".output-container").scrollTop = textarea.scrollHeight;
 	query({"inputs": input}).then((response) => {
+		console.log(response)
 		document.querySelector(".output-container").append("\nDaaksh: ")
-		console.log("p1")
 		replaceimg("speak.gif")
 		typeWriter(".output-container", response)
 		tts(response)
@@ -161,7 +161,6 @@ function typeWriter(elem, txt) {
 	} else {
 		i = 0;
 		if (!conversation_starter.includes(txt)) {
-			console.log("p2")
 			replaceimg("image.jpeg")
 		}
 	}
