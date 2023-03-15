@@ -1,4 +1,4 @@
-API_KEY = "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";
+API_KEY = "";
 
 const seriousBtn = document.getElementById('serious-btn');
 const casualBtn = document.getElementById('casual-btn');
@@ -132,7 +132,6 @@ function main(){
 	document.querySelector(".output-container").scrollTop = textarea.scrollHeight;
 	query({"inputs": input}).then((response) => {
 		document.querySelector(".output-container").append("\nDaaksh: ")
-		t = (response.length/30)*1000
 		console.log("p1")
 		replaceimg("speak.gif")
 		typeWriter(".output-container", response)
