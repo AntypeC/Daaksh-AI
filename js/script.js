@@ -5,7 +5,7 @@ const casualBtn = document.getElementById('casual-btn');
 let isCasual = true;
 
 var i = 0;
-var speed = 50;
+var speed = 30;
 
 function selectCasual() {
 	isCasual = true
@@ -131,7 +131,7 @@ function main(){
 	document.querySelector(".output-container").scrollTop = textarea.scrollHeight;
 	query({"inputs": input}).then((response) => {
 		document.querySelector(".output-container").append("\nDaaksh: ")
-		t = (response.length/16)*1000
+		t = (response.length/20)*1000
 		animate(t, 'speak.gif')
 		typeWriter(".output-container", response)
 		tts(response)
