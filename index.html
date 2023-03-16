@@ -41,19 +41,46 @@
             height: 100vh;
             z-index: -1;
         }
+        .pfp-container {
+            position: relative;
+            margin: auto;
+            width: 50%;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+        .pfp-bg {
+            position: absolute;
+            align-items: center;
+            top: 20px;
+            left: 100px;
+            width: 280px;
+            height: 435px;
+            border-radius: 10px;
+            /* set a solid border with the same width as the box-shadow */
+            border: 8px solid transparent;
+            /* use a transparent inset shadow to create the blurred effect */
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
+            /* add the blurred background image to the wrapper element */ 
+            background-color: rgba(0, 0, 0, 0.8);
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: 1;
+        }
 
-        .gradient-border {
+        .pfp {
+            position: absolute;
+            top: 10%;
+            left: 22.5%;
             width: 270px;
             text-align: center;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            padding: 20px;
             border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.8);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 24px;
             font-weight: bold;
             color: #d0d0d0;
+            z-index: 2;
         }
 
         .border-radius {
@@ -96,10 +123,10 @@
             padding: 10px;
             font-size: 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px 0px 0px 10px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             background-color: rgba(0, 0, 0, 0.8);
-            margin-right: 5px;
+            margin-right: 0px;
             color: white;
         }
         .input-container button {
@@ -107,7 +134,7 @@
             color: white;
             font-size: 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: 0px 10px 10px 0px;
             padding: 10px 20px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
@@ -115,8 +142,8 @@
             background-color: #555;
         }
         .output-container {
-            border: 2px solid rgb(0, 255, 0);
-            border-radius: 5px;
+            border: 3px solid rgb(0, 255, 0);
+            border-radius: 10px;
             padding: 20px;
             margin: 0px 0px 100px 0px;
             font-size: 24px;
@@ -131,7 +158,7 @@
             color: white;
             font-size: 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             padding: 10px 20px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
@@ -162,10 +189,14 @@
             <h1>Daaksh, the Cosmic <span style="color:rgb(0, 255, 0);">Space Duck</span></h1>
             <p>Experience the brilliance of <em>Daaksh Raj Dhariwal</em>, your AI-powered personal genius</p>
         </div>
-        <div class="gradient-border">
-            <p>Conversational Style</p>
-            <button id="serious-btn" class="conversation-btn">Serious</button>
-            <button id="casual-btn" class="conversation-btn">Casual</button>
+        <div class="pfp-container">
+            <div class="pfp-bg">
+            </div>          
+            <div class="pfp">
+                <p>Conversational Style</p>
+                <button id="serious-btn" class="conversation-btn">Serious</button>
+                <button id="casual-btn" class="conversation-btn">Casual</button>
+            </div>
         </div>
         <div class="input-container">
             <textarea id="query"></textarea>

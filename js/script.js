@@ -91,17 +91,17 @@ document.querySelector(".output-container").append("Daaksh: ")
 num = Math.floor(Math.random()*6)
 r = conversation_starter[num]
 
-const portrait = document.querySelector('.gradient-border');
+const pfp = document.querySelector('.pfp');
 
 function replaceimg(filename) {
 	const elem = document.createElement('img');
 	elem.classList.add('border-radius')
 	elem.setAttribute('src', './resources/'+filename);
-	if (portrait.querySelector('img')) {
+	if (pfp.querySelector('img')) {
 		img = document.querySelector('img')
-		portrait.removeChild(img)
+		pfp.removeChild(img)
 	}
-	portrait.prepend(elem)
+	pfp.prepend(elem)
 }
 
 t = 5000
