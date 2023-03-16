@@ -1,4 +1,4 @@
-API_KEY = "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";
+API_KEY = "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";
 
 const seriousBtn = document.getElementById('serious-btn');
 const casualBtn = document.getElementById('casual-btn');
