@@ -26,12 +26,6 @@
             transition: background-image 1s ease-in-out;
         }
 
-        @media (pointer:coarse) {
-            body {
-                zoom: 50%;
-            }
-        }
-
         .gradient {
             background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
             position: absolute;
@@ -179,6 +173,14 @@
             width: 100%;
             margin: 0;
             overflow: hidden;
+        }
+        @media (pointer:coarse) {
+            body {
+                zoom: 50%;
+            }
+            .pfp {
+                zoom: 40%;
+            }
         }
     </style>
 </head>
