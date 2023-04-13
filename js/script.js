@@ -52,7 +52,7 @@ async function query(data) {
 			}
 		}
 	} else {
-		url = "https://api.betterapi.net/youdotcom/chat?message=" + JSON.parse(JSON.stringify(data)).inputs.replace(" ", "%20") + "&key=" + "GMLUGVL5ODC5JFU5T8YOC4L5S6TG5T08YXA"
+		url = "https://api.betterapi.net/youdotcom/chat?message=" + JSON.parse(JSON.stringify(data)).inputs.replace(" ", "%20") + "&key=" + "TCWA06W6RLPGGLR0BNQGHSNVBTUSJ1T9LY3"
 		console.log(url)
 		try {
 			const response = await fetch(url);
